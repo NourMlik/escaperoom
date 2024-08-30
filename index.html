@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Escape Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cybersecurity Escape Room</h1>
+        <div id="game">
+            <div id="intro">
+                <p>Welcome, Cybersecurity Experts! Solve the puzzles to escape the room before time runs out!</p>
+                <button onclick="startGame()">Start Game</button>
+            </div>
+            
+            <!-- Puzzle 1: Password Decryption -->
+            <div id="puzzle1" class="puzzle hidden">
+                <h2>Puzzle 1: Password Decryption</h2>
+                <p>Decode the password: ZHOFRPH</p>
+                <input type="text" id="passwordInput" placeholder="Enter password">
+                <button onclick="checkPassword()">Submit</button>
+                <p id="puzzle1Result"></p>
+            </div>
+            
+            <!-- Puzzle 2: Phishing Email Identification -->
+            <div id="puzzle2" class="puzzle hidden">
+                <h2>Puzzle 2: Phishing Email Identification</h2>
+                <p>Select the phishing email:</p>
+                <ul>
+                    <li><button onclick="checkEmail(1)">Email 1: "Your account has been compromised, click here to reset your password!"</button></li>
+                    <li><button onclick="checkEmail(2)">Email 2: "Your monthly statement is ready, please review your secure document."</button></li>
+                    <li><button onclick="checkEmail(3)">Email 3: "Please confirm your payment details for your recent purchase."</button></li>
+                </ul>
+                <p id="puzzle2Result"></p>
+            </div>
+
+            <!-- Puzzle 3: Network Mapping -->
+            <div id="puzzle3" class="puzzle hidden">
+                <h2>Puzzle 3: Network Mapping</h2>
+                <p>Drag the devices to the correct network positions:</p>
+                <div id="networkMap">
+                    <img src="network-map-placeholder.png" alt="Network Map">
+                    <!-- This is a placeholder; you can add drag-and-drop functionality here -->
+                </div>
+                <button onclick="solveNetwork()">I’ve solved it!</button>
+                <p id="puzzle3Result"></p>
+            </div>
+
+            <!-- Final Lock -->
+            <div id="finalLock" class="puzzle hidden">
+                <h2>Final Puzzle: Unlock the Door</h2>
+                <p>Enter the final code to escape:</p>
+                <input type="text" id="finalCodeInput" placeholder="Enter code">
+                <button onclick="checkFinalCode()">Unlock</button>
+                <p id="finalResult"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

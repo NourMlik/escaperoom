@@ -1,0 +1,51 @@
+// script.js
+
+function startGame() {
+    document.getElementById('intro').classList.add('hidden');
+    document.getElementById('puzzle1').classList.remove('hidden');
+}
+
+// Puzzle 1: Password Decryption
+function checkPassword() {
+    const input = document.getElementById('passwordInput').value;
+    const correctPassword = 'WELCOME'; // Decoded from ZHOFRPH using Caesar Cipher (+3)
+    
+    if (input.toUpperCase() === correctPassword) {
+        document.getElementById('puzzle1Result').textContent = 'Correct! Moving to the next puzzle.';
+        document.getElementById('puzzle1').classList.add('hidden');
+        document.getElementById('puzzle2').classList.remove('hidden');
+    } else {
+        document.getElementById('puzzle1Result').textContent = 'Incorrect. Try again!';
+    }
+}
+
+// Puzzle 2: Phishing Email Identification
+function checkEmail(choice) {
+    if (choice === 1) {
+        document.getElementById('puzzle2Result').textContent = 'Correct! Moving to the next puzzle.';
+        document.getElementById('puzzle2').classList.add('hidden');
+        document.getElementById('puzzle3').classList.remove('hidden');
+    } else {
+        document.getElementById('puzzle2Result').textContent = 'Incorrect. Try again!';
+    }
+}
+
+// Puzzle 3: Network Mapping
+function solveNetwork() {
+    // For simplicity, we're assuming the correct solution here
+    document.getElementById('puzzle3Result').textContent = 'Correct! Proceed to the final lock.';
+    document.getElementById('puzzle3').classList.add('hidden');
+    document.getElementById('finalLock').classList.remove('hidden');
+}
+
+// Final Lock
+function checkFinalCode() {
+    const finalCode = document.getElementById('finalCodeInput').value;
+    const correctCode = '1234'; // Example final code
+    
+    if (finalCode === correctCode) {
+        document.getElementById('finalResult').textContent = 'Congratulations! You have escaped!';
+    } else {
+        document.getElementById('finalResult').textContent = 'Incorrect code. Try again!';
+    }
+}
